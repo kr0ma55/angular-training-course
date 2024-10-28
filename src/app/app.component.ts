@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(): void {
 
+    //test
+
     this.service.getMockFile() .subscribe(
       (response:any)=>{console.log(response)}
     );
