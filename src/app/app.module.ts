@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { PaginaUtentiComponent } from './pagina-utenti/pagina-utenti.component';
+import { PaginaPostComponent } from './pagina-post/pagina-post.component';
 
 
 
@@ -14,6 +16,8 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     FooterComponent,
     HeaderComponent,
+    PaginaPostComponent,
+    PaginaUtentiComponent
   
   ],
   imports: [
