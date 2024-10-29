@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     //test
-    // test2 AA
 
     this.service.getMockFile() .subscribe(
       (response:any)=>{console.log(response)}
@@ -28,3 +27,6 @@ export class AppComponent implements OnInit {
   }
 
 }
+
+
+//costruire header, css (in app component)
