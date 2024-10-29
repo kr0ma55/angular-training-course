@@ -12,7 +12,7 @@ import { ServizioComuneService } from './core/servizio-comune.service';
 export class AppComponent implements OnInit {
   title: string = 'pippo-app';
 
-  pippo: string = 'ciao ragazze'
+  pippo: string = 'ciao ragazze' + 'ciao ragazzi'
   listaMock: Array<Post> = [];
   constructor(private service: ServizioComuneService) {
 
