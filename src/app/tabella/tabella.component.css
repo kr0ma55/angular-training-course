@@ -1,0 +1,33 @@
+.card {
+    border: solid 3px rgb(0, 0, 0);
+    border-style: groove;
+    font-family: 'Courier New', Courier, monospace;
+    min-width: 350px;
+    max-width: 350px;
+    width: 30%;
+    height: 220px;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-weight: bold;    
+    position: relative;
+    background-color: lavenderblush;
+    padding: 3px;
+}
+
+button {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-around;
+  }

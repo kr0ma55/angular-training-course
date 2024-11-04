@@ -14,17 +14,24 @@ export class PaginaPostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getMockFile().subscribe(
-      (response: any) => {this.listaPost = response}
+    this.service.getPosts().subscribe(
+      (response: any) => { this.listaPost = response }
     );
   }
 
-  
+
 
   onPostDeleted(inputUtente: Post) {
-    this.listaPost= this.listaPost.filter(p => p.id !== inputUtente.id);
-    alert(`hai cancellato l'item ${inputUtente.id}`) ;
+    this.service.deletePost(inputUtente.id).subscribe(
+      (response: any) => {
+        this.service.getPosts().subscribe(
+          (response: any) => { this.listaPost = response }
+        );
+      }
+    );
   }
+
+
 
 
 }

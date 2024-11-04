@@ -1,0 +1,13 @@
+
+<div class="card-container">
+
+    <div class="card" *ngFor="let item of posts">
+
+    <h4>{{item.title}}</h4>
+
+    <button mat-fab color="warn" (click)="cancellaPost(item)" >
+        <mat-icon>delete</mat-icon>
+      </button>
+
+    </div>
+</div>
