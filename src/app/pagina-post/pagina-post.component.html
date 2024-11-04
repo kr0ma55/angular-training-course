@@ -1,6 +1,7 @@
 
-<div id="content">
-    <span>test POST</span>
-    <span>test POST</span>
-    <span>test POST</span>
+<div class="wrapper" id="content">
+    
+    <app-tabella [posts]="listaPost" (deletedPost)="onPostDeleted($event)"></app-tabella>
+
 </div>
+

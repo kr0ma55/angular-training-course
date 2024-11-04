@@ -10,23 +10,18 @@ import { ServizioComuneService } from './core/servizio-comune.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  title: string = 'pippo-app';
+  // title: string = 'pippo-app';
 
-  pippo: string = 'ciao ragazze' + 'ciao ragazzi'
+  // pippo: string = 'ciao ragazze' + 'ciao ragazzi'
   listaMock: Array<Post> = [];
   constructor(private service: ServizioComuneService) {
-
   }
+
   ngOnInit(): void {
-
-    //test
-
-    this.service.getMockFile() .subscribe(
-      (response:any)=>{console.log(response)}
-    );
+    // this.service.getMockFile().subscribe(
+    //   (response:any)=>{this.listaMock = response}
+    // );
   }
 
 }
 
-
-//costruire header, css (in app component)

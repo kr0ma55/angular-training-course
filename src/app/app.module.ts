@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { PaginaUtentiComponent } from './pagina-utenti/pagina-utenti.component';
 import { PaginaPostComponent } from './pagina-post/pagina-post.component';
+import { TabellaComponent } from './tabella/tabella.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -17,17 +20,21 @@ import { PaginaPostComponent } from './pagina-post/pagina-post.component';
     FooterComponent,
     HeaderComponent,
     PaginaPostComponent,
-    PaginaUtentiComponent
+    PaginaUtentiComponent,
+    TabellaComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [
     
+  
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
