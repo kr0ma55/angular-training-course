@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../shared/post.model';
 import { ServizioComuneService } from '../core/servizio-comune.service';
+import { Component, OnInit } from '@angular/core';
+import { Post } from '../shared/post.model';
+import { ServizioComuneService } from '../core/servizio-comune.service';
 
 @Component({
   selector: 'app-pagina-post',

@@ -13,8 +13,8 @@ export class AppComponent implements OnInit {
  listaMock: Array<Post> = [];
 
   constructor(private service: ServizioComuneService) {
-
   }
+
   ngOnInit(): void {
 
   

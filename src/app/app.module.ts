@@ -43,6 +43,8 @@ import { MatInputModule } from '@angular/material/input';
     
   
     provideAnimationsAsync()
+  
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
