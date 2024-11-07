@@ -1,14 +1,13 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, tap } from 'rxjs/operators';
-import { from, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Post } from '../shared/post.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServizioComuneService  {
+export class ServizioComuneService {
   listaPost = [
     {
       "userId": 1,
@@ -612,29 +611,34 @@ export class ServizioComuneService  {
     }
   ]
   constructor(private http: HttpClient) {
-      localStorage.clear();
-      localStorage.setItem('posts', JSON.stringify(this.listaPost));
-
+    localStorage.clear();
+    localStorage.setItem('posts', JSON.stringify(this.listaPost));
   }
-  
+
   getPosts(): Observable<Post[]> {
 
-      return of(JSON.parse(localStorage.getItem('posts') || '{}'));
+    return of(JSON.parse(localStorage.getItem('posts') || '{}'));
 
-   
-
-  }
-
-  deletePost(idParametro: number): Observable<boolean> {
-    let listaDaLocalStorage = JSON.parse(localStorage.getItem('posts') || '');
-    listaDaLocalStorage = listaDaLocalStorage.filter((x: any) => x.id !== idParametro)
-    localStorage.setItem('posts', JSON.stringify(listaDaLocalStorage));
-    return of(true);
-  }
-
-
+ 
 
 }
+
+  addPost(newPost:Post): Observable<boolean> {
+  let listaDaLocalStorage = JSON.parse(localStorage.getItem('posts') || '');
+  listaDaLocalStorage.push(newPost) //la variabile listaDaLocalStorage non vuole il simbolo '=' perché la push agisce sulla lista originale//
+  localStorage.setItem('posts', JSON.stringify(listaDaLocalStorage));
+  return of(true);
+}
+
+deletePost(idParametro: number): Observable<boolean> {
+  let listaDaLocalStorage = JSON.parse(localStorage.getItem('posts') || '');
+  listaDaLocalStorage = listaDaLocalStorage.filter((x: any) => x.id !== idParametro) //la variabile listaDaLocalStorage ha bisogno del simbolo '=' perché la filter crea una copia filtrata lista originale//
+  localStorage.setItem('posts', JSON.stringify(listaDaLocalStorage));
+  return of(true);
+}
+  }
+
+
 
 
 

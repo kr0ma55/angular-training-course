@@ -1,6 +1,14 @@
+<div class="example-form">
+    <button (click)="openModal()">New Post</button>
+   <app-modale (submitData)="onFormSubmitted($event)"
+   *ngIf="isModalOpen"
+   (close)="closeModal()"
+   ></app-modale>
 
-<div id="content">
-    <span>test POST</span>
-    <span>test POST</span>
-    <span>test POST</span>
+</div>
+
+<div id="content" class="wrapper">
+    <app-tabella [posts]="listaPost" (deletedPost)="onPostDeleted($event)">
+
+    </app-tabella>
 </div>
