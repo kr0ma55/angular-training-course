@@ -38,13 +38,11 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     
+    
   ],
   providers: [
+      provideAnimationsAsync()
     
-  
-    provideAnimationsAsync()
-  
-    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

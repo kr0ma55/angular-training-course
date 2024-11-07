@@ -1,9 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../shared/post.model';
 import { ServizioComuneService } from '../core/servizio-comune.service';
-import { Component, OnInit } from '@angular/core';
-import { Post } from '../shared/post.model';
-import { ServizioComuneService } from '../core/servizio-comune.service';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import { ModaleComponent } from '../modale/modale.component';
 
 @Component({
   selector: 'app-pagina-post',
@@ -15,7 +22,7 @@ export class PaginaPostComponent implements OnInit {
  isModalOpen = false;
  newPost= FormData;
 
- constructor(private service: ServizioComuneService) {
+ constructor(private service: ServizioComuneService,private dialog: MatDialog) {
 
  }
 
@@ -26,11 +33,10 @@ export class PaginaPostComponent implements OnInit {
 }
 
 openModal() {
-  this.isModalOpen = true;
+ 
+  this.dialog.open(ModaleComponent);
 }
-closeModal() {
-  this.isModalOpen = false;
-}
+
 
 onFormSubmitted(newPost:Post) {
   this.service.addPost(newPost).subscribe(

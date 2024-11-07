@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Post } from '../shared/post.model';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modale',
@@ -13,13 +14,16 @@ export class ModaleComponent {
   };
 
   pippo= 'ciao';
+  constructor(private dialogRef : MatDialogRef<ModaleComponent>){
+    
+  }
 
 
 @Output() close = new EventEmitter<void>();
 @Output() submitData = new EventEmitter<Post>();
 
 closeModal() {
-  this.close.emit();
+  this.dialogRef.close();
 }
 
 

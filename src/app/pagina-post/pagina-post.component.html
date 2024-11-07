@@ -2,7 +2,6 @@
     <button (click)="openModal()">New Post</button>
    <app-modale (submitData)="onFormSubmitted($event)"
    *ngIf="isModalOpen"
-   (close)="closeModal()"
    ></app-modale>
 
 </div>
