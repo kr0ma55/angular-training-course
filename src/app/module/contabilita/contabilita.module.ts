@@ -5,6 +5,7 @@ import { PaginaPostComponent } from './components/pagina-post/pagina-post.compon
 import { TabellaComponent } from './components/tabella/tabella.component';
 import { ContabilitaRoutingModule } from './contabilita-routing.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   imports: [
     CommonModule,
     ContabilitaRoutingModule,
-    MatSlideToggleModule
+    SharedModule
+    
     
 
   ]

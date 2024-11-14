@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MagazzinoModuleRoutingModule } from './magazzino-routing.module';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MagazzinoComponent } from './components/pagina-amici/home-magazzino.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -11,7 +12,8 @@ import { MagazzinoComponent } from './components/pagina-amici/home-magazzino.com
   imports: [
     CommonModule,
     MagazzinoModuleRoutingModule,
-    MatSlideToggleModule
+    SharedModule
+  
 
   ]
 })
