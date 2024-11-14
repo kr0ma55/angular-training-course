@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Post } from '../shared/post.model';
+import { Post } from '../../../../shared/post.model';
+
 
 @Component({
   selector: 'app-tabella',
@@ -10,10 +11,17 @@ import { Post } from '../shared/post.model';
 export class TabellaComponent {
 @Input() posts:  Array<Post> = [];
 @Output() deletedPost = new EventEmitter<Post>();
+@Output() updatePost = new EventEmitter<Post>();
 
 
 deletePost(inputUtente:Post){
   this.deletedPost.emit(inputUtente)
+
+
+
+}
+modifyPost(inputUtente:Post){
+  this.updatePost.emit(inputUtente)
 
 
 

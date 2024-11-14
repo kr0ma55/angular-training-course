@@ -1,18 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PaginaUtentiComponent } from './pagina-utenti/pagina-utenti.component';
-import { PaginaPostComponent } from './pagina-post/pagina-post.component';
+import { AppComponent } from './app.component';
+import { BenvenutoComponent } from './components/benvenuto/benvenuto.component';
+
+
+
 
 
 const routes: Routes = [
-  { path: 'posts-list', component: PaginaPostComponent },
-  { path: 'users-list', component: PaginaUtentiComponent },
-  { path: '',   redirectTo: '/posts-list', pathMatch: 'full' }
- /*  
+  {
+    path: '',
+    component: BenvenutoComponent,
+  },
+  {
+    path: 'magazzino',
+    loadChildren: () =>
+      import('./module/magazzino/magazzino.module').then((m) => m.MagazzinoModule),
+  },
+  {
+    path: 'contabilita',
+    loadChildren: () =>
+      import('./module/contabilita/contabilita.module').then((m) => m.ContabilitaModule),
+  }
 
-  { path: '**', component: PageNotFoundComponent } */
+
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

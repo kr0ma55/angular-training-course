@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../shared/post.model';
-import { ServizioComuneService } from '../core/servizio-comune.service';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -11,6 +9,9 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { ModaleComponent } from '../modale/modale.component';
+import { Post } from '../../../../shared/post.model';
+import { ServizioComuneService } from '../../../../core/servizio-comune.service';
+
 
 @Component({
   selector: 'app-pagina-post',
@@ -22,6 +23,7 @@ export class PaginaPostComponent implements OnInit {
  isModalOpen = false;
  newPost= FormData;
 
+ valoreDiRitornoOpenRef: MatDialogRef<ModaleComponent> | undefined;
  constructor(private service: ServizioComuneService,private dialog: MatDialog) {
 
  }
@@ -30,12 +32,10 @@ export class PaginaPostComponent implements OnInit {
   this.service.getPosts().subscribe(
     (response:any)=>{this.listaPost=response}
   );
+ 
 }
 
-openModal() {
- 
-  this.dialog.open(ModaleComponent);
-}
+
 
 
 onFormSubmitted(newPost:Post) {
@@ -59,6 +59,13 @@ onPostDeleted(inputUtente: Post) {
   );
 }
 
+
+onPostUpdated($event: Post){
+  this.valoreDiRitornoOpenRef = this.dialog.open(ModaleComponent,{
+    data: { ...$event },
+  });
+  this.valoreDiRitornoOpenRef?.afterClosed().subscribe( valDiRitorno => {console.log(valDiRitorno)})
+}
 
  }
 

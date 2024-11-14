@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from './shared/post.model';
 import { ServizioComuneService } from './core/servizio-comune.service';
+import { Router } from '@angular/router';
 
 
 
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit {
 
   
   }
+
 
 }
 
