@@ -1,31 +1,37 @@
 <header class="header">
-    <div class="header-container">
-        <span class="logo">fakeIUP</span>
-    </div>
     
-    <div class="div-search">
-        <input type="text" class="search-input" placeholder="Cerca..." />
-        <button class="search-button">🔍</button>
-    </div>
-    <div class="nav-menu">
-        <ul>
-            <li>
+        <div class="app-title-container">
+            <span class="title">fakeIUP</span>
+        </div>
+        <div class="nav-menu-container">
+            <div>
                 <a (click)="navigate('/')">HOME</a>
 
-            </li>
-            <li>
+            </div>
+
+            <div>
                 <a (click)="navigate('/contabilita')">CONTABILITA'</a>
 
-            </li>
-            <li>
+            </div>
+
+            <div>
                 <a (click)="navigate('/magazzino')">MAGAZZINO</a>
+                <!-- <a (click)="navigate('/contabilita/fattura')">FATTURA</a> -->
+            </div>
+        </div>
 
-            </li>
-            <!-- <li>
-                <a (click)="navigate('/contabilita/fattura')">FATTURA</a>
 
-            </li> -->
-        </ul>
-    </div>
+   
+
+
+    <!-- <div class="header-row">
+        <div class="search-container">
+
+            <input type="text" class="search-input" placeholder="Cerca..." />
+            <button class="search-button">🔍</button>
+        </div>
+
+    </div> -->
+
 
 </header>

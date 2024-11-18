@@ -1,0 +1,85 @@
+.header {
+  height: 10vh;
+  
+  background-color: #810af5;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: -3px 6px 15px 8px rgb(0 0 0 / 32%);
+
+  .app-title-container {
+    display: flex;
+    flex-basis: 50%;
+
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+      margin-right: auto;
+      font-family: monospace;
+    }
+  }
+
+  .nav-menu-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 50%;
+
+    div {
+      font-family: monospace;
+      color: white;
+      font-size: 18px;
+      padding: 5px;
+    }
+
+    div:hover {
+      background-color: yellow;
+
+      cursor: pointer;
+    }
+  }
+
+
+
+
+
+  .header-row {
+    display: flex;
+
+    .search-container {
+      background-color: #108dec5b;
+      flex-basis: 230px;
+
+      .search-input {
+        padding: 8px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+
+      }
+    }
+
+
+  }
+
+
+}
+
+
+
+
+
+
+
+.search-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}

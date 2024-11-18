@@ -1,27 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Post } from './shared/post.model';
-import { ServizioComuneService } from './core/servizio-comune.service';
-import { Router } from '@angular/router';
-
-
+import { AfterViewInit, Component, inject, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
- listaMock: Array<Post> = [];
+export class AppComponent {
 
-  constructor(private service: ServizioComuneService) {
-  }
-
-  ngOnInit(): void {
-
+  title = 'angie';
+  ngOnInit(){
   
   }
-
-
 }
-
-

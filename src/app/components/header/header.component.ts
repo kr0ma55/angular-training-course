@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
-import { Observable, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
- /*  heroes$: Observable<any[]> | undefined; */
-  constructor(private routerService: Router,private route: ActivatedRoute){
+  constructor(private routerService: Router, private route: ActivatedRoute) {
 
   }
 
@@ -18,10 +16,11 @@ export class HeaderComponent implements OnInit {
       if (events instanceof NavigationStart) {
         console.log(this.route);
         console.log(this.routerService);
-    } 
+      }
     })
   }
-  navigate(url:string){
+
+  navigate(url: string) {
     this.routerService.navigateByUrl(url);
   }
 }
