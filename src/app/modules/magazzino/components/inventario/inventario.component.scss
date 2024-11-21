@@ -1,0 +1,23 @@
+.card {
+    border: solid 3px rgb(0, 0, 0);
+    border-style: groove;
+    font-family: 'Courier New', Courier, monospace;
+    min-width: 250px;
+    max-width: 250px;
+    width: 30%;
+    height: 200px;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-weight: bold;    
+    position: relative;
+    background-color: lavenderblush;
+    padding: 3px;
+}
+
+.tabella {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

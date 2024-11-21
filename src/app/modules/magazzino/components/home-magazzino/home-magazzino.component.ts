@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MagazzinoService } from '../../shared/magazzino.service';
+import { UserService } from '../../../../core/user.service';
 
 @Component({
   selector: 'app-home-magazzino',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class HomeMagazzinoComponent {
 
+  constructor(private serviceU:UserService){
+    /* this.serviceU.location = window.location.pathname; */
+    console.log(this.serviceU._location);
+  }
 }

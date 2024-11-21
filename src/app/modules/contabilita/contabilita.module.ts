@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HomeContabilitaComponent } from './components/home-contabilita/home-contabilita.component';
 import { ContabilitaRoutingModule } from './contabilita-routing.module';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -11,7 +10,7 @@ import { SharedModule } from '../shared/shared.module';
     HomeContabilitaComponent
   ],
   imports: [
-    SharedModule,
+     SharedModule,
     ContabilitaRoutingModule
   ]
 })

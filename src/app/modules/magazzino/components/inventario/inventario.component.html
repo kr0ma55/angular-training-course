@@ -1,0 +1,10 @@
+<div class="tabella">
+    <div class="card" *ngFor="let item of listaPaginata">
+        {{item.id}}
+    </div>
+</div>
+
+
+<ng-container *ngIf="!!listaOriginale && !!listaOriginale.length">
+    <app-paginator [totalItems]="listaOriginale.length" (changePage)="changePage($event)" />
+</ng-container>

@@ -14,8 +14,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.routerService.events.subscribe(events => {
       if (events instanceof NavigationStart) {
-        console.log(this.route);
-        console.log(this.routerService);
+        /* console.log(this.route);
+        console.log(this.routerService); */
       }
     })
   }

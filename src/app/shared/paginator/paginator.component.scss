@@ -1,0 +1,27 @@
+.paginator-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    .page-switch-container {
+        display: flex;
+        flex-basis: 200px;
+        justify-content: space-around;
+
+        mat-icon{
+            cursor: pointer;
+        }
+        .pages-container {
+            display: flex;
+            flex-basis: 80%;
+            justify-content: space-evenly;
+
+            .page-item {
+                cursor: pointer;
+                text-decoration: underline;
+                &.violet{
+                    color: blueviolet;
+                }
+            }
+        }
+    }
+}
