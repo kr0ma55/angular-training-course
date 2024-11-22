@@ -19,16 +19,11 @@ export class PaginatorComponent implements OnInit, OnChanges {
   pagesList!: number[];
   currentPage: number = 1;
 
-
-  //INDICI
-  endIndex: number = 1;
-  startIndex: number = 1;
   endIndexForEntries: number = 1;
   startIndexForEntries: number = 1;
 
   ngOnInit(): void {
     this.updateIndexesOfEntries();
-
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -40,12 +35,12 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
   onNextPage() {
     if (!(this.currentPage >= this.pageCount)) {
-      this.startIndex = this.currentPage * this.pageSize;
-      this.endIndex = ++this.currentPage * this.pageSize;
+      let startIndex = this.currentPage * this.pageSize;
+      let endIndex = ++this.currentPage * this.pageSize;
       this.updateIndexesOfEntries();
       this.changePage.emit({
-        startIndex: this.startIndex,
-        endIndex: this.endIndex
+        startIndex: startIndex,
+        endIndex: endIndex
 
       });
     }
@@ -54,13 +49,13 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
   onPreviousPage() {
     if (this.currentPage !== 1) {
-      this.endIndex = (this.currentPage * this.pageSize) - this.pageSize;
-      this.startIndex = this.endIndex - this.pageSize;
+      let endIndex = (this.currentPage * this.pageSize) - this.pageSize;
+      let startIndex = endIndex - this.pageSize;
       --this.currentPage;
       this.updateIndexesOfEntries();
       this.changePage.emit({
-        endIndex: this.endIndex,
-        startIndex: this.startIndex
+        endIndex: endIndex,
+        startIndex: startIndex
       });
     }
   }

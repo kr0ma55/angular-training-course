@@ -10,7 +10,7 @@ import { MagazzinoService } from '../../shared/magazzino.service';
 })
 export class InventarioComponent implements OnInit {
      listaOriginale!:Post[] ;
-     listaPaginata:Post[] = new Array<Post>();
+     listaPaginata:any[] = new Array<any>();
      
      constructor(private serviceU:MagazzinoService){
     }
@@ -20,6 +20,8 @@ export class InventarioComponent implements OnInit {
       this.serviceU.getPosts().subscribe((res)=> { 
        this.listaOriginale = res;
        this.listaPaginata = res.slice(0,10);
+       
+      /*  this.listaPaginata = ['a','b','c','d','e','f']; */
       })
    }
 

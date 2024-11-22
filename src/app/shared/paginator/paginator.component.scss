@@ -1,6 +1,7 @@
 .paginator-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0px 120px 0px 120px;
 
     .page-switch-container {
         display: flex;

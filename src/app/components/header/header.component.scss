@@ -1,20 +1,19 @@
 .header {
-  height: 10vh;
-  
+  height: 5vh;
   background-color: #810af5;
   display: flex;
-  justify-content: flex-end;
   box-shadow: -3px 6px 15px 8px rgb(0 0 0 / 32%);
 
   .app-title-container {
     display: flex;
+    align-items: center;
     flex-basis: 50%;
 
     .title {
       font-size: 36px;
       font-weight: bold;
       color: white;
-      margin-right: auto;
+      margin-left: 1%;
       font-family: monospace;
     }
   }
