@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MagazzinoService } from '../../shared/magazzino.service';
 import { UserService } from '../../../../core/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-magazzino',
@@ -9,8 +10,14 @@ import { UserService } from '../../../../core/user.service';
 })
 export class HomeMagazzinoComponent {
 
-  constructor(private serviceU:UserService){
+  constructor(private serviceU:UserService,
+    private router: Router){
     /* this.serviceU.location = window.location.pathname; */
     console.log(this.serviceU._location);
   }
+  goToInventario() {
+    this.router.navigate(['/magazzino/inventario']);
+
+}
+
 }

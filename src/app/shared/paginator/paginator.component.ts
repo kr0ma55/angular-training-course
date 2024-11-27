@@ -10,7 +10,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
 
   @Input() totalItems: number = 0;
-  @Output() goTo: EventEmitter<number> = new EventEmitter<number>()
+  // @Output() goTo: EventEmitter<any> = new EventEmitter<any>()
   @Output() next: EventEmitter<number> = new EventEmitter<number>()
   @Output() previous: EventEmitter<number> = new EventEmitter<number>()
   @Output() changePage: EventEmitter<any> = new EventEmitter<any>()
@@ -40,7 +40,8 @@ export class PaginatorComponent implements OnInit, OnChanges {
       this.updateIndexesOfEntries();
       this.changePage.emit({
         startIndex: startIndex,
-        endIndex: endIndex
+        endIndex: endIndex,
+        metodo: 'onNextPage',
 
       });
     }
@@ -55,14 +56,30 @@ export class PaginatorComponent implements OnInit, OnChanges {
       this.updateIndexesOfEntries();
       this.changePage.emit({
         endIndex: endIndex,
-        startIndex: startIndex
+        startIndex: startIndex,
+        metodo: 'onPreviousPage',
       });
     }
   }
 
+  onSelectedPage(i:number){
+    let startIndex= (i * this.pageSize) - this.pageSize;
+    let endIndex = startIndex + this.pageSize;
+    this.currentPage=i;
+    this.updateIndexesOfEntries();
+      this.changePage.emit({
+        startIndex: startIndex,
+        endIndex: endIndex,
+        metodo: 'onSelectedPage',
+        });
+
+  }
+
   updateIndexesOfEntries() {
     this.endIndexForEntries = (this.totalItems / this.pageSize) * this.currentPage;
-    this.startIndexForEntries = this.endIndexForEntries - this.pageSize;
-    this.startIndexForEntries = this.startIndexForEntries === 0 ? this.startIndexForEntries + 1 : this.startIndexForEntries;
+    this.startIndexForEntries = (this.endIndexForEntries - this.pageSize) +1 ;
+    
   }
+
+
 }

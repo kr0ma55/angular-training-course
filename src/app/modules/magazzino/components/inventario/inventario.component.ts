@@ -20,8 +20,6 @@ export class InventarioComponent implements OnInit {
       this.serviceU.getPosts().subscribe((res)=> { 
        this.listaOriginale = res;
        this.listaPaginata = res.slice(0,10);
-       
-      /*  this.listaPaginata = ['a','b','c','d','e','f']; */
       })
    }
 

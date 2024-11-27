@@ -5,8 +5,8 @@
     <div class="page-switch-container">
         <mat-icon fontIcon="chevron_left" (click)="onPreviousPage()"></mat-icon>
         <div class="pages-container">
-            <div *ngFor="let item of pagesList;let i = index;">
-                <span [ngClass]="{violet: item === currentPage}" class="page-item">{{item}}</span>
+            <div *ngFor="let item of pagesList;let i = index;" (click)="onSelectedPage(item)">
+                <span [ngClass]="{violet: item === currentPage}" class="page-item">{{item}} </span>
             </div>
         </div>
         <mat-icon fontIcon="chevron_right" (click)="onNextPage()"></mat-icon>

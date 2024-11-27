@@ -10,7 +10,7 @@ import { SharedModule } from '../../shared/shared.module';
     HomeContabilitaComponent
   ],
   imports: [
-     SharedModule,
+    SharedModule,
     ContabilitaRoutingModule
   ]
 })

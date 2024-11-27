@@ -16,7 +16,7 @@ import { InventarioComponent } from './components/inventario/inventario.componen
     InventarioComponent
   ],
   imports: [
-    SharedModule ,
+    SharedModule,
     MagazzinoModuleRoutingModule,
     
   ],
